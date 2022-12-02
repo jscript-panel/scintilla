@@ -3,7 +3,7 @@
 const filenames = {
 	'input': new URL('../scintilla/include/Scintilla.iface', import.meta.url),
 	'template': new URL('./ScintillaImpl.template.hpp', import.meta.url),
-	'output': new URL('../../src/UI/ScintillaImpl.hpp', import.meta.url),
+	'output': new URL('./ScintillaImpl.hpp', import.meta.url),
 }
 
 const typeAliases = {
