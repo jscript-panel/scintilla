@@ -1,5 +1,9 @@
 name: GenerateScintillaImpl
-on: [push, pull_request]
+on:
+  push:
+    paths:
+      - 'scintilla/include/Scintilla.iface'
+
 jobs:
   GenerateScintillaImpl:
     runs-on: windows-2022
