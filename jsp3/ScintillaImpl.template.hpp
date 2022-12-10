@@ -2,8 +2,6 @@
 #include <ScintillaTypes.h>
 #include <ScintillaMessages.h>
 
-#pragma comment(lib, "Imm32.lib")
-
 using namespace Scintilla;
 
 template <class T>
