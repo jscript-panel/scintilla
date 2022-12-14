@@ -14,13 +14,12 @@ jobs:
         fetch-depth: 0
 
     - name: GenerateScintillaImpl
+      working-directory: jsp3
       run: |
-        mkdir upload
-        cd jsp3 && node ScintillaImpl.mjs
-        copy ScintillaImpl.hpp ..\upload
+        node ScintillaImpl.mjs
 
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
         name: ScintillaImpl
-        path: upload
+        path: jsp3/ScintillaImpl.hpp
