@@ -11,9 +11,9 @@ const typeAliases = {
 	'colour': 'Colour',
 	'colouralpha': 'ColourAlpha',
 	'findtext': 'void*',
-	'findtextfull': 'void*',
+	'findtextfull': 'TextToFindFull*',
 	'formatrange': 'void*',
-	'formatrangefull': 'void*',
+	'formatrangefull': 'RangeToFormatFull*',
 	'keymod': 'int',
 	'line': 'Line',
 	'pointer': 'void*',
@@ -21,7 +21,7 @@ const typeAliases = {
 	'string': 'const char*',
 	'stringresult': 'char*',
 	'textrange': 'void*',
-	'textrangefull': 'void*',
+	'textrangefull': 'TextRangeFull*',
 }
 
 const basicTypes = [
