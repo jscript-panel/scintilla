@@ -4,6 +4,7 @@ on:
     paths:
       - '.github/workflows/GenerateScintillaImpl.yml'
       - 'scintilla/include/Scintilla.iface'
+      - 'scintilla/jsp3/ScintillaImpl.mjs'
       - 'scintilla/jsp3/ScintillaImpl.template.hpp'
 
 jobs:
