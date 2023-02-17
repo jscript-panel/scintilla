@@ -1,6 +1,7 @@
 #pragma once
 #include <ScintillaTypes.h>
 #include <ScintillaMessages.h>
+#include <ScintillaStructures.h>
 
 using namespace Scintilla;
 
