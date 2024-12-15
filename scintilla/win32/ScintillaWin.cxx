@@ -270,7 +270,7 @@ public:
 		return ImmGetCompositionStringW(hIMC, GCS_CURSORPOS, nullptr, 0);
 	}
 
-	std::vector<BYTE> GetImeAttributes() {
+	std::vector<BYTE> GetImeAttributes() const {
 		const int attrLen = ::ImmGetCompositionStringW(hIMC, GCS_COMPATTR, nullptr, 0);
 		std::vector<BYTE> attr(attrLen, 0);
 		::ImmGetCompositionStringW(hIMC, GCS_COMPATTR, &attr[0], static_cast<DWORD>(attr.size()));
@@ -282,7 +282,7 @@ public:
 		return byteLen / sizeof(wchar_t);
 	}
 
-	std::wstring GetCompositionString(DWORD dwIndex) {
+	std::wstring GetCompositionString(DWORD dwIndex) const {
 		const LONG byteLen = ::ImmGetCompositionStringW(hIMC, dwIndex, nullptr, 0);
 		std::wstring wcs(byteLen / 2, 0);
 		::ImmGetCompositionStringW(hIMC, dwIndex, &wcs[0], byteLen);
@@ -1653,7 +1653,8 @@ sptr_t ScintillaWin::MouseMessage(unsigned int iMessage, uptr_t wParam, sptr_t l
 				const int widthToScroll = static_cast<int>(std::lround(charsToScroll * vs.aveCharWidth));
 				HorizontalScrollToClamped(xOffset + widthToScroll);
 			}
-			return 1;
+			// return 1 for Logitech mouse, https://www.pretentiousname.com/setpoint_hwheel/index.html
+			return (iMessage == WM_MOUSEHWHEEL) ? 1 : 0;
 		}
 
 		// Either SCROLL vertically or ZOOM. We handle the wheel steppings calculation
