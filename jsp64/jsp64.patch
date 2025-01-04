@@ -7,7 +7,7 @@ index 293e7d3..27f494c 100644
  };
  
 -const TCHAR ListBoxX_ClassName[] = TEXT("ListBoxX");
-+const TCHAR ListBoxX_ClassName[] = TEXT("ListBoxX.jsp3");
++const TCHAR ListBoxX_ClassName[] = TEXT("ListBoxX.jsp64");
  
  ListBox::ListBox() noexcept {
  }
@@ -20,7 +20,7 @@ index ce9eca9..27a6994 100644
  namespace {
  
 -const TCHAR callClassName[] = TEXT("CallTip");
-+const TCHAR callClassName[] = TEXT("CallTip.jsp3");
++const TCHAR callClassName[] = TEXT("CallTip.jsp64");
  
  void SetWindowID(HWND hWnd, int identifier) noexcept {
  	::SetWindowLongPtr(hWnd, GWLP_ID, identifier);
@@ -29,7 +29,7 @@ index ce9eca9..27a6994 100644
  	wndclass.cbWndExtra = sizeof(ScintillaWin *);
  	wndclass.hInstance = hInstance;
 -	wndclass.lpszClassName = L"Scintilla";
-+	wndclass.lpszClassName = L"Scintilla.jsp3";
++	wndclass.lpszClassName = L"Scintilla.jsp64";
  	scintillaClassAtom = ::RegisterClassExW(&wndclass);
  	const bool result = 0 != scintillaClassAtom;
  
